@@ -1,4 +1,5 @@
 package timingtest;
+import afu.org.checkerframework.checker.igj.qual.I;
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
@@ -23,6 +24,36 @@ public class TimeSLList {
 
     public static void timeGetLast() {
         // TODO: YOUR CODE HERE
+       AList<Integer> Ns=new AList<>();
+       AList<Integer> opcounts=new AList<>();
+       AList<Double> times=new AList<>();
+       SLList<Integer> L;
+       int Max=128000,temp=1000;
+       int M=10000;
+       while(temp<=Max)
+       {
+           Ns.addLast(temp);
+           temp*=2;
+       }
+       for(int i=0;i<Ns.size();i++)
+       {
+           int N=Ns.get(i);
+           L=new SLList<>();
+           int j=0;
+           while(j<N)
+           {
+               L.addLast(j);//将此轮每个元素添加至L
+               j++;
+           }
+           Stopwatch sw=new Stopwatch();
+           for(int k=0;k<M;k++)
+           {
+               L.getLast();
+           }
+           times.addLast(sw.elapsedTime());
+           opcounts.addLast(M);
+       }
+       printTimingTable(Ns,times,opcounts);
     }
 
 }
