@@ -8,10 +8,7 @@ import java.util.Comparator;
 /** Performs some basic linked list tests. */
 public class MaxArrayDequeTest
 {
-    /** public void addIsEmptySizeTest()
-     *  public void addRemoveTest()
-     *  public void removeEmptyTest()
-     *   public void emptyNullReturnTest()*/
+
     @Test
     public void addIsEmptySizeTest()
     {

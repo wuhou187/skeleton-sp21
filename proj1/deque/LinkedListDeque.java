@@ -1,7 +1,5 @@
 package deque;
-
 import java.util.Iterator;
-import java.util.Objects;
 
 public class LinkedListDeque<T> implements Iterable<T>,Deque<T>
 {
@@ -31,8 +29,8 @@ public class LinkedListDeque<T> implements Iterable<T>,Deque<T>
     @Override
     public void addFirst(T item)
     {
-        Node newNode=new Node(item,sentinelFront,sentinelFront.next);//构建新节点
-        sentinelFront.next.prev=newNode;//更新prev与next
+        Node newNode=new Node(item,sentinelFront,sentinelFront.next);
+        sentinelFront.next.prev=newNode;
         sentinelFront.next=newNode;
         size++;
     }
@@ -203,6 +201,5 @@ public class LinkedListDeque<T> implements Iterable<T>,Deque<T>
             L3.addLast(j);
         }
         System.out.println(L1.equals(L2));
-        System.out.println(Objects.equals(L2.get(15), L3.get(15)));
     }
 }

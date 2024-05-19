@@ -182,7 +182,7 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T>
         {
             return false;
         }
-        if(o instanceof ArrayDeque)
+        if(o instanceof Deque)
         {
             return true;
         }
@@ -200,7 +200,7 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T>
         }
         return true;
     }
-    public static void main(String[] args)
+    private static void main(String[] args)
     {
         int n=99;
         ArrayDeque<Integer> L1=new ArrayDeque<>();
