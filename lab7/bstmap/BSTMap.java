@@ -89,7 +89,7 @@ public class BSTMap<K extends Comparable<K>,V> implements Map61B<K,V>{
             return node.value;
         }
 
-        public void printInorder(){
+        public void printInOrder(){
             if(root==null){
                 System.out.println("There is no BSTMap");
                 return;
