@@ -1,7 +1,7 @@
 package bstmap;
 import java.util.*;
 public class BSTMap<K extends Comparable<K>,V> implements Map61B<K,V>{
-    class Node{
+    private class Node{
         K key;
         V value;
         Node left;
@@ -96,7 +96,7 @@ public class BSTMap<K extends Comparable<K>,V> implements Map61B<K,V>{
             }
             ArrayList<K> keys=keyInOrder(root);
             for(K key:keys){
-                System.out.println("key: "+key);
+                System.out.println("key: "+get(key));
             }
         }
 
@@ -213,14 +213,14 @@ public class BSTMap<K extends Comparable<K>,V> implements Map61B<K,V>{
 
         /**将键放入数组链表当中*/
         private ArrayList<K> keyInOrder(Node root){
-            ArrayList<K> keys=new ArrayList<>();
-            if(root.left!=null){
-                keys.addAll(keyInOrder(root.left));
-            }
-            keys.add(root.key);
-            if(root.right!=null){
-                keys.addAll(keyInOrder(root.right));
-            }
-            return keys;
+           ArrayList<K> keys=new ArrayList<>();
+           if(root.left!=null){
+               keys.addAll(keyInOrder(root.left));
+           }
+           keys.add(root.key);
+           if(root.right!=null){
+               keys.addAll(keyInOrder(root.right));
+           }
+           return keys;
         }
 }
